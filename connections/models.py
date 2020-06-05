@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from django.urls import reverse
 
 
 # Create your models here.
@@ -24,3 +25,5 @@ class Connection(models.Model):
     def __str__(self):
         return self.core_emotion
 
+    def get_absolute_url(self):
+        return reverse('connection_detail', args=[str(self.id)])

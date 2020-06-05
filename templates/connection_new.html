@@ -1,0 +1,10 @@
+<!-- templates/connection_new.html -->
+{% extends '_base.html' %}
+
+{% block content %}
+    <h1>New Connection</h1>
+    <form action="" method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Save" />
+    </form>
+{% endblock content %}
