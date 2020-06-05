@@ -1,4 +1,11 @@
+<!-- templates/connection_detail.html -->
+{% extends '_base.html' %}
+
+{% block content %}
 <div class="connection-entry">
     <h2>{{ connection.core_emotion }}</h2>
     <p>{{ connection.reason }}</p>
 </div>
+
+<a href="{% url 'connection_edit' connection.pk %}">+ Edit connection</a>
+{% endblock content %}

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
 
 from .models import Connection
 # Create your views here.
@@ -16,4 +16,9 @@ class ConnectionDetailView(DetailView):
 class ConnectionCreateView(CreateView):
     model = Connection
     template_name = 'connection_new.html'
+    fields = ['core_emotion', 'reason']
+
+class ConnectionUpdateView(UpdateView):
+    model = Connection
+    template_name = 'connection_edit.html'
     fields = ['core_emotion', 'reason']
