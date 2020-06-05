@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.urls import reverse
-
+from django.utils.timezone import now
 
 # Create your models here.
 class Connection(models.Model):
@@ -21,6 +21,7 @@ class Connection(models.Model):
         default=CoreEmotion.AFRAID
     )
     reason = models.TextField()
+    created_date = models.DateTimeField(default=now, editable=False, blank=True)
 
     def __str__(self):
         return self.core_emotion
