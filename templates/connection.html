@@ -1,7 +1,13 @@
 <!-- templates/connection.html -->
-<h1>Connection</h1>
-<ul>
-    {% for connection in all_connections_list %}
-        <li>{{ connection.core_emotion }}</li>
-    {% endfor %}
-</ul>
+{% extends '_base.html' %}
+
+{% block title %}Connection{% endblock title %}
+
+{% block content %}
+    <h1>Connection</h1>
+    <ul>
+        {% for connection in all_connections_list %}
+            <li>{{ connection.core_emotion }}</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}
