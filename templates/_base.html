@@ -10,6 +10,15 @@
             <div class="nav-left">
                 <h1><a href="{% url 'connection' %}">Connection</a></h1>
             </div>
+            <div class="user-authenticated">
+                {% if user.is_authenticated %}
+                    Hi, {{ user.email }}!
+                    <p><a href="{% url 'logout' %}">Log out</a></p>
+                {% else %}
+                    <p>You are not logged in</p>
+                    <a href="{% url 'login' %}">Log In</a>
+                {% endif %}
+            </div>
             <div class="nav-right">
                 <a href="{% url 'connection_new' %}">+ New Connection</a>
             </div>
