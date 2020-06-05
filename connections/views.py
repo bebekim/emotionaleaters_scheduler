@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, CreateView, UpdateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
 
 from .models import Connection
 # Create your views here.
@@ -22,3 +23,8 @@ class ConnectionUpdateView(UpdateView):
     model = Connection
     template_name = 'connection_edit.html'
     fields = ['core_emotion', 'reason']
+
+class ConnectionDeleteView(DeleteView):
+    model = Connection
+    template_name = 'connection_delete.html'
+    success_url = reverse_lazy('connection')

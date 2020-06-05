@@ -7,5 +7,10 @@
     <p>{{ connection.reason }}</p>
 </div>
 
-<a href="{% url 'connection_edit' connection.pk %}">+ Edit connection</a>
+<div>
+    <a href="{% url 'connection_edit' connection.pk %}">+ Edit connection</a>
+</div>
+<div>
+    <a href="{% url 'connection_delete' connection.pk %}">+ Delete connection</a>
+</div>
 {% endblock content %}
