@@ -1,9 +1,16 @@
 <!-- templates/connection.html -->
 {% extends '_base.html' %}
+{% load static %}
 
-{% block title %}<h1>Connection</h1>{% endblock title %}
+{% block title %}Journal of Emotional Eating{% endblock title %}
 
 {% block content %}
+    <h1>Connections</h1>
+    {% if user.is_authenticated %}
+        <p>Hi {{ user.email }}</p>
+    {% else %}
+        <p>You are not logged in</p>
+    {% endif %}
     {% for connection in all_connections_list %}
         <div class="connection-entry">
             <h2><a href="{% url 'connection_detail' connection.pk %}">{{ connection.core_emotion }}</a></h2>

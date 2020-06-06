@@ -6,6 +6,8 @@ chardet==3.0.4
 click==7.1.2
 cookiecutter==1.7.2
 Django==3.0.6
+django-crispy-forms==1.9.1
+django-smart-selects==1.5.6
 idna==2.9
 Jinja2==2.11.2
 jinja2-time==0.2.0
