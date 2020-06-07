@@ -40,9 +40,9 @@ INSTALLED_APPS = [
     # 3rd party
     'crispy_forms',
     # local
-    'connections.apps.ConnectionsConfig',
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
+    'connections.apps.ConnectionsConfig',
 ]
 
 MIDDLEWARE = [
