@@ -7,23 +7,19 @@ from django.utils.timezone import now
 class Connection(models.Model):
     MEDIA_CHOICES = [
         ('unknown', 'Unknown'),
-        ('Happy', (
-                ('appreciative', 'Appreciative'),
-                ('blissful', 'Blissful'),
-                ('confident', 'Confident'),
-                ('connected', 'Connected'),
-                ('encouraged', 'Encouraged'),
+        ('Worthy', (
+                ('deserving', 'Deserving'),
+                ('hard working', 'Hard working'),
+                ('small win', 'Small win'),
+                ('proud', 'Proud'),
             )
         ),
         ('Afraid', (
                 ('anxious', 'Anxious'),
                 ('concerned', 'Concerned'),
                 ('defensive', 'Defensive'),
-                ('distressed', 'Distressed'),
                 ('edgy', 'Edgy'),
                 ('overwhelmed', 'Overwhelmed'),
-                ('powerless', 'Powerless'),
-                ('worried', 'Worried'),
             )
         ),
         ('Hurt', (
@@ -44,20 +40,17 @@ class Connection(models.Model):
                 ('annoyed', 'Annoyed'),
                 ('bitter', 'Bitter'),
                 ('fed up', 'Fed up'),
-                ('grumpy', 'Grumpy'),
-                ('irritated', 'Irritated'),
-                ('jeaous', 'Jealous'),
+                ('jealous', 'Jealous'),
+                ('unappreciated', 'Unappreciated'),
                 ('upset', 'Upset'),
                 ('vengeful', 'Vengeful'),
             )
         ),
         ('Ashamed', (
                 ('disgraced', 'Disgraced'),
-                ('embarrassed', 'Embarrassed'),
                 ('exposed', 'Exposed'),
                 ('foolish', 'Foolish'),
                 ('humiliated', 'Humiliated'),
-                ('mortified', 'Mortified'),
                 ('self-conscious', 'Self-conscious'),
                 ('unworthy', 'Unworthy'),
                 ('vulnerable', 'Vulnerable'),
