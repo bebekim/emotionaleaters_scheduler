@@ -6,17 +6,75 @@ from django.utils.timezone import now
 # Create your models here.
 class Connection(models.Model):
     MEDIA_CHOICES = [
-        ('Audio', (
-                ('vinyl', 'Vinyl'),
-                ('cd', 'CD'),
-            )
-        ),
-        ('Video', (
-                ('vhs', 'VHS Tape'),
-                ('dvd', 'DVD'),
-            )
-        ),
         ('unknown', 'Unknown'),
+        ('Happy', (
+                ('appreciative', 'Appreciative'),
+                ('blissful', 'Blissful'),
+                ('confident', 'Confident'),
+                ('connected', 'Connected'),
+                ('encouraged', 'Encouraged'),
+            )
+        ),
+        ('Afraid', (
+                ('anxious', 'Anxious'),
+                ('concerned', 'Concerned'),
+                ('defensive', 'Defensive'),
+                ('distressed', 'Distressed'),
+                ('edgy', 'Edgy'),
+                ('overwhelmed', 'Overwhelmed'),
+                ('powerless', 'Powerless'),
+                ('worried', 'Worried'),
+            )
+        ),
+        ('Hurt', (
+                ('discarded', 'Discarded'),
+                ('insulted', 'Insulted'),
+                ('rejected', 'Rejected'),
+                ('unwanted', 'Unwanted'),
+            )
+        ),
+        ('Guilty', (
+                ('bad', 'Bad'),
+                ('regretful', 'Regretful'),
+                ('responsible', 'Responsible'),
+                ('wrong', 'Wrong'),
+            )
+        ),
+        ('Angry', (
+                ('annoyed', 'Annoyed'),
+                ('bitter', 'Bitter'),
+                ('fed up', 'Fed up'),
+                ('grumpy', 'Grumpy'),
+                ('irritated', 'Irritated'),
+                ('jeaous', 'Jealous'),
+                ('upset', 'Upset'),
+                ('vengeful', 'Vengeful'),
+            )
+        ),
+        ('Ashamed', (
+                ('disgraced', 'Disgraced'),
+                ('embarrassed', 'Embarrassed'),
+                ('exposed', 'Exposed'),
+                ('foolish', 'Foolish'),
+                ('humiliated', 'Humiliated'),
+                ('mortified', 'Mortified'),
+                ('self-conscious', 'Self-conscious'),
+                ('unworthy', 'Unworthy'),
+                ('vulnerable', 'Vulnerable'),
+            )
+        ),
+        ('Sad', (
+                ('blue', 'Blue'),
+                ('depressed', 'Depressed'),
+                ('disappointed', 'Disappointed'),
+                ('down', 'Down'),
+                ('empty', 'Empty'),
+                ('miserable', 'Miserable'),
+                ('irritable', 'Irritable'),
+                ('unwanted', 'Unwanted'),
+                ('withdrawn', 'Withdrawn'),
+            )
+        ),
     ]
 
     emotion = models.CharField(
