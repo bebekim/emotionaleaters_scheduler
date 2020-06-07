@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'emotionaleater_proj.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'emotionaleating_db',
+        'USER': 'emotionaleater',
+        'PASSWORD': 'May5L0v3',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
