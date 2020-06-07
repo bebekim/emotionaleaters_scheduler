@@ -5,26 +5,30 @@ from django.utils.timezone import now
 
 # Create your models here.
 class Connection(models.Model):
+    MEDIA_CHOICES = [
+        ('Audio', (
+                ('vinyl', 'Vinyl'),
+                ('cd', 'CD'),
+            )
+        ),
+        ('Video', (
+                ('vhs', 'VHS Tape'),
+                ('dvd', 'DVD'),
+            )
+        ),
+        ('unknown', 'Unknown'),
+    ]
 
-    class CoreEmotion(models.TextChoices):
-        AFRAID = 'AFR', _('Afraid')
-        ANGRY = 'ANG', _('Angry')
-        ASHAMED = 'SHM', _('Ashamed')
-        HAPPY = 'HPY', _('Happy')
-        HURT = 'HRT', _('Hurt')
-        GUILTY = 'GTY', _('Guilty')
-        SAD = 'SAD', _('Sad')
-
-    core_emotion = models.CharField(
-        max_length=3,
-        choices=CoreEmotion.choices,
-        default=CoreEmotion.AFRAID
+    emotion = models.CharField(
+        max_length=50,
+        choices=MEDIA_CHOICES,
+        default='unknown'
     )
     reason = models.TextField()
     created_date = models.DateTimeField(default=now, editable=False, blank=True)
 
     def __str__(self):
-        return self.core_emotion
+        return self.emotion
 
     def get_absolute_url(self):
         return reverse('connection_detail', args=[str(self.id)])

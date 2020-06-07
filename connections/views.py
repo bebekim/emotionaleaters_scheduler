@@ -17,12 +17,12 @@ class ConnectionDetailView(DetailView):
 class ConnectionCreateView(CreateView):
     model = Connection
     template_name = 'connection_new.html'
-    fields = ['core_emotion', 'reason']
+    fields = ['emotion', 'reason']
 
 class ConnectionUpdateView(UpdateView):
     model = Connection
     template_name = 'connection_edit.html'
-    fields = ['core_emotion', 'reason']
+    fields = ['emotion', 'reason']
 
 class ConnectionDeleteView(DeleteView):
     model = Connection
