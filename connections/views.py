@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
@@ -5,20 +6,29 @@ from django.urls import reverse_lazy
 from .models import Connection
 # Create your views here.
 
-class ConnectionListView(ListView):
+class ConnectionListView(LoginRequiredMixin, ListView):
     model = Connection
-    template_name = 'connection.html'
     context_object_name = 'all_connections_list'
+    template_name = 'connection.html'
+    login_url = 'account_login'
 
 class ConnectionDetailView(DetailView):
     model = Connection
     template_name = 'connection_detail.html'
     fields = ['emotion', 'author', 'reason']
+    login_url = 'account_login'
 
-class ConnectionCreateView(CreateView):
+class ConnectionCreateView(LoginRequiredMixin, CreateView):
     model = Connection
     template_name = 'connection_new.html'
-    fields = ['emotion', 'author', 'reason']
+    fields = ('emotion', 'reason')
+    login_url = '/login/'
+#    redirect_field_name = 'redirect_to'
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
 
 class ConnectionUpdateView(UpdateView):
     model = Connection
