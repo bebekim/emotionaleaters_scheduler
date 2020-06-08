@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
 from django.urls import reverse
 from django.utils.timezone import now
@@ -69,11 +70,14 @@ class Connection(models.Model):
             )
         ),
     ]
-
     emotion = models.CharField(
         max_length=50,
         choices=MEDIA_CHOICES,
         default='unknown'
+    )
+    author = models.ForeignKey(
+        get_user_model(),
+        on_delete=models.CASCADE,
     )
     reason = models.TextField()
     created_date = models.DateTimeField(default=now, editable=False, blank=True)

@@ -13,11 +13,12 @@ class ConnectionListView(ListView):
 class ConnectionDetailView(DetailView):
     model = Connection
     template_name = 'connection_detail.html'
+    fields = ['emotion', 'author', 'reason']
 
 class ConnectionCreateView(CreateView):
     model = Connection
     template_name = 'connection_new.html'
-    fields = ['emotion', 'reason']
+    fields = ['emotion', 'author', 'reason']
 
 class ConnectionUpdateView(UpdateView):
     model = Connection
