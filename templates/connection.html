@@ -2,19 +2,30 @@
 {% extends '_base.html' %}
 {% load static %}
 
-{% block title %}Journal of Emotional Eating{% endblock title %}
+{% block title %}Connections{% endblock title %}
 
 {% block content %}
-    <h1>Connections</h1>
-    {% if user.is_authenticated %}
-        <p>Hi {{ user.email }}</p>
-    {% else %}
-        <p>You are not logged in</p>
-    {% endif %}
-    {% for connection in all_connections_list %}
-        <div class="connection-entry">
-            <h2><a href="{% url 'connection_detail' connection.pk %}">{{ connection.emotion }}</a></h2>
-            <p>{{ connection.reason }}</p>
-        </div>
-    {% endfor %}
+{% if user.is_authenticated %}
+<p>Hi {{ user.email }}</p>
+{% else %}
+<p>You are not logged in</p>
+{% endif %}
+
+{% for connection in all_connections_list %}
+<div class="card">
+    <div class="card-header">
+        <span class="font-weight-bold">{{ connection.emotion }}</span> &middot;
+        <spn class=
+        <span class="text-muted">by {{ connection.author }} | {{ connection.created_date }}</span>
+    </div>
+    <div class="card-body">
+        {{ connection.reason }}
+    </div>
+    <div class="card-footer text-center text-muted">
+        <a href="{% url 'connection_edit' connection.pk %}">Edit</a> |
+        <a href="{% url 'connection_delete' connection.pk %}">Delete</a>
+    </div>
+</div>
+<br />
+{% endfor %}
 {% endblock content %}

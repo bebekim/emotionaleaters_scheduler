@@ -6,5 +6,5 @@ class AboutPageView(TemplateView):
 
 class HomePageView(ListView):
     model = Connection
-    template_name = 'connection.html'
+    template_name = 'home.html'
     context_object_name = 'all_connections_list'
