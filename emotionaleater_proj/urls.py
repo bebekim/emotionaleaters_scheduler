@@ -25,5 +25,6 @@ urlpatterns = [
 
 #    path('motivation/', include('motivations.urls')),
     path('connection/', include('connections.urls')),
+    path('vice/', include('vices.urls')),
     path('', include('pages.urls')),
 ]

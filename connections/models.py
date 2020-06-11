@@ -6,7 +6,7 @@ from django.utils.timezone import now
 
 # Create your models here.
 class Connection(models.Model):
-    MEDIA_CHOICES = [
+    EMOTION_CHOICES = [
         ('unknown', 'Unknown'),
         ('Worthy', (
                 ('deserving', 'Deserving'),
@@ -72,7 +72,7 @@ class Connection(models.Model):
     ]
     emotion = models.CharField(
         max_length=50,
-        choices=MEDIA_CHOICES,
+        choices=EMOTION_CHOICES,
         default='unknown'
     )
     author = models.ForeignKey(

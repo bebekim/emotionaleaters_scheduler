@@ -1,0 +1,29 @@
+<!-- templates/connection.html -->
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}Vices{% endblock title %}
+
+{% block content %}
+{% if user.is_authenticated %}
+<p>Hi {{ user.email }}</p>
+{% else %}
+<p>You are not logged in</p>
+{% endif %}
+
+{% for vice in all_vices_list %}
+<div class="card">
+    <div class="card-header">
+        <span class="font-weight-bold">{{ vice.consumption }}</span> &middot;
+        <span class=="text-muted">by {{ vice.author }} | {{ vice.created_date }}</span>
+    </div>
+    <div class="card-body">
+        <span class=="text-body">In {{ vice.location }} at {{ vice.occasion }}</span> &middot;
+        <span class="text-body">with {{ vice.involved_one }}</span>
+    </div>
+    <div class="card-footer text-center text-muted">
+    </div>
+</div>
+<br />
+{% endfor %}
+{% endblock content %}

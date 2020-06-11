@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'connections.apps.ConnectionsConfig',
     'motivations.apps.MotivationsConfig',
+    'vices.apps.VicesConfig',
 ]
 
 MIDDLEWARE = [
