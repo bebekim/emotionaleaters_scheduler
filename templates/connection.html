@@ -22,6 +22,7 @@
         {{ connection.reason }}
     </div>
     <div class="card-footer text-center text-muted">
+        <a href="{% url 'connection_detail' connection.pk %}">View</a> |
         <a href="{% url 'connection_edit' connection.pk %}">Edit</a> |
         <a href="{% url 'connection_delete' connection.pk %}">Delete</a>
     </div>

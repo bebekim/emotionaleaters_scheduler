@@ -1,12 +1,14 @@
-<!-- templates/connection_edit.html -->
+<!-- templates/vice_edit.html -->
 {% extends '_base.html' %}
 {% load crispy_forms_tags %}
 
 {% block content %}
-    <h1>Edit connection</h1>
+    <h1>Edit Vice</h1>
     <form action="" method="post">
         {% csrf_token %}
         {{ form|crispy }}
         <input type="submit" value="Update" />
     </form>
 {% endblock content %}
+
+
