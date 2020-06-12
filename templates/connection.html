@@ -11,7 +11,7 @@
 <p>You are not logged in</p>
 {% endif %}
 
-{% for connection in all_connections_list %}
+{% for connection in all_connections_list reversed %}
 <div class="card">
     <div class="card-header">
         <span class="font-weight-bold">{{ connection.emotion }}</span> &middot;

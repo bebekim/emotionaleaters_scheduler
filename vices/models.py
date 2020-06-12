@@ -10,11 +10,11 @@ import datetime
 class Vice(models.Model):
 
     class ConsumptionArea(models.TextChoices):
-        SAFESPACE = 'SAFESPACE', _('Safe Space')
-        COMMONAREA = 'COMMONAREA', _('Common Area')
-        KITCHEN = 'KITCHEN', _('Kitchen')
-        MOVING = 'MOVING', _('Moving')
-        RESTAURANT = 'RESTAURANT', _('Restaurant')
+        SAFESPACE = 'Safe Space', _('Safe Space')
+        COMMONAREA = 'Common Area', _('Common Area')
+        KITCHEN = 'Kitchen', _('Kitchen')
+        MOVING = 'Moving', _('Moving')
+        RESTAURANT = 'Restaurant', _('Restaurant')
         
     location = models.CharField(
         max_length=50,
@@ -101,7 +101,7 @@ class Vice(models.Model):
 
     consumption = models.CharField(max_length=50)
     consumption_date = models.DateField(_("Date"), default=datetime.date.today)
-    
+
     author = models.ForeignKey(
         get_user_model(),
         on_delete=models.CASCADE,

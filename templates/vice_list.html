@@ -15,11 +15,11 @@
 <div class="card">
     <div class="card-header">
         <span class="font-weight-bold">{{ vice.consumption }}</span> &middot;
-        <span class=="text-muted">by {{ vice.author }} | {{ vice.created_date }}</span>
+        <span class=="text-muted">by {{ vice.author }} </span> &middot;
+        <span class=="text-muted">w/ {{ vice.involved_one }}</span>
     </div>
     <div class="card-body">
-        <span class=="text-body">In {{ vice.location }} at {{ vice.occasion }}</span> &middot;
-        <span class="text-body">with {{ vice.involved_one }}</span>
+        <span class="text-body">{{ vice.occasion }}</span>
     </div>
     <div class="card-footer text-center text-muted">
     </div>
