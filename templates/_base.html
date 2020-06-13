@@ -20,9 +20,16 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 {% if user.is_authenticated %}
                 <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'connection' %}"">Connection</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'vice_list ' %}"">Vice</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
