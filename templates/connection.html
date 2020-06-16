@@ -6,16 +6,18 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-<p>Hi {{ user.email }}</p>
+    <p>Hi {{ user.email }}</p>
+    <div class="add">
+        <a href="{% url 'connection_new' %}">+New connection</a>
+    </div>
 {% else %}
-<p>You are not logged in</p>
+    <p>You are not logged in</p>
 {% endif %}
 
 {% for connection in all_connections_list reversed %}
 <div class="card">
     <div class="card-header">
         <span class="font-weight-bold">{{ connection.emotion }}</span> &middot;
-        <spn class=
         <span class="text-muted">by {{ connection.author }} | {{ connection.created_date }}</span>
     </div>
     <div class="card-body">

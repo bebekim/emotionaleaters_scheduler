@@ -8,33 +8,11 @@ from django.utils.timezone import now
 class Connection(models.Model):
     EMOTION_CHOICES = [
         ('unknown', 'Unknown'),
-        ('Worthy', (
-                ('deserving', 'Deserving'),
-                ('hard working', 'Hard working'),
-                ('small win', 'Small win'),
-                ('proud', 'Proud'),
-            )
-        ),
         ('Afraid', (
                 ('anxious', 'Anxious'),
                 ('concerned', 'Concerned'),
                 ('defensive', 'Defensive'),
-                ('edgy', 'Edgy'),
                 ('overwhelmed', 'Overwhelmed'),
-            )
-        ),
-        ('Hurt', (
-                ('discarded', 'Discarded'),
-                ('insulted', 'Insulted'),
-                ('rejected', 'Rejected'),
-                ('unwanted', 'Unwanted'),
-            )
-        ),
-        ('Guilty', (
-                ('bad', 'Bad'),
-                ('regretful', 'Regretful'),
-                ('responsible', 'Responsible'),
-                ('wrong', 'Wrong'),
             )
         ),
         ('Angry', (
@@ -57,16 +35,42 @@ class Connection(models.Model):
                 ('vulnerable', 'Vulnerable'),
             )
         ),
+        ('Guilty', (
+                ('bad', 'Bad'),
+                ('regretful', 'Regretful'),
+                ('responsible', 'Responsible'),
+                ('wrong', 'Wrong'),
+            )
+        ),
+        ('Hurt', (
+                ('discarded', 'Discarded'),
+                ('insulted', 'Insulted'),
+                ('rejected', 'Rejected'),
+                ('unwanted', 'Unwanted'),
+            )
+        ),
+        ('Out of Option', (
+                ('directionless', 'Directionless'),
+                ('lack of control', 'Lack of Control'),
+                ('lost', 'Lost'),
+                ('trapped', 'Trapped'),
+                ('uncoordinated', 'Uncoordinated'),
+            )
+        ),
         ('Sad', (
-                ('blue', 'Blue'),
-                ('depressed', 'Depressed'),
                 ('disappointed', 'Disappointed'),
-                ('down', 'Down'),
                 ('empty', 'Empty'),
                 ('miserable', 'Miserable'),
-                ('irritable', 'Irritable'),
+                ('trapped', 'Trapped'),
                 ('unwanted', 'Unwanted'),
                 ('withdrawn', 'Withdrawn'),
+            )
+        ),
+        ('Worthy', (
+                ('deserving', 'Deserving'),
+                ('hard working', 'Hard working'),
+                ('small win', 'Small win'),
+                ('proud', 'Proud'),
             )
         ),
     ]

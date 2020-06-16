@@ -16,7 +16,7 @@ class ViceListView(LoginRequiredMixin, ListView):
 class ViceCreateView(LoginRequiredMixin, CreateView):
     model = Vice
     template_name = 'vice_new.html'
-    fields = ('location', 'occasion', 'connection', 'involved_one', 'consumption', 'consumption_date')
+    fields = ('location', 'occasion', 'consumption', 'consumption_date')
     login_url = '/login/'
     redirect_field_name = 'redirect_to'
 

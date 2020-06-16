@@ -42,23 +42,23 @@ class Vice(models.Model):
         ),
         ('At work', (
                 ('plan for day', 'Plan for Day'),
-                ('before meeting', 'Before Meeting'),
-                ('during meeting', 'During Meeting'),
-                ('after meeting', 'After Meeting'),
+                # ('before meeting', 'Before Meeting'),
+                # ('during meeting', 'During Meeting'),
+                # ('after meeting', 'After Meeting'),
                 ('roadblocked', 'Roadblocked'),
-                ('hard at work', 'Hard at Work'),
+                # ('hard at work', 'Hard at Work'),
                 ('break', 'Break'),
                 ('interrupted', 'Interrupted'),
             )
         ),
         ('Kids at Home', (
                 ('house chore', 'House Chore'),
-                ('finish work', 'Finish Work'),
-                ('spend time with children', 'Spend Time with Children'),
+                ('finished work', 'Finished Work'),
+                ('spent time with children', 'Spent Time with Children'),
             )
         ),
         ('Kids asleep', (
-                ('finish up house chore', 'Finish up House Chore'),
+                ('finished house chore', 'Finished House Chore'),
                 ('time with partner', 'Time with Partner'),
                 ('alone time', 'Alone Time'),
             )
@@ -71,33 +71,33 @@ class Vice(models.Model):
         default='unspecified'
     )
 
-    connection = models.ForeignKey(
-        connection_models.Connection,
-        on_delete=models.CASCADE,
-        null=True,
-        blank=True
-    )
+    # connection = models.ForeignKey(
+    #     connection_models.Connection,
+    #     on_delete=models.CASCADE,
+    #     null=True,
+    #     blank=True
+    # )
 
-    class StressSource(models.TextChoices):
-        SELF = 'SELF', _('Self')
-        PARTNER = 'PARTNER', _('Partner')
-        CHILD = 'CHILD', _('Child')
-        PARENT = 'PARENT', _('Parent')
-        SIBLING = 'SIBLING', _('Sibling')
-        FRIEND = 'FRIEND', _('Friend')
-        EMPLOYER = 'EMPLOYER', _('Employer')
-        SUPERVISOR = 'SUPERVISOR', _('Supervisor')
-        EMPLOYEE = 'EMPLOYEE', _('Employee')
-        COLLEAGUE = 'COLLEAGUE', _('Colleague')
-        RANDOM = 'RANDOM', _('Random')
+    # class StressSource(models.TextChoices):
+    #     SELF = 'SELF', _('Self')
+    #     PARTNER = 'PARTNER', _('Partner')
+    #     CHILD = 'CHILD', _('Child')
+    #     PARENT = 'PARENT', _('Parent')
+    #     SIBLING = 'SIBLING', _('Sibling')
+    #     FRIEND = 'FRIEND', _('Friend')
+    #     EMPLOYER = 'EMPLOYER', _('Employer')
+    #     SUPERVISOR = 'SUPERVISOR', _('Supervisor')
+    #     EMPLOYEE = 'EMPLOYEE', _('Employee')
+    #     COLLEAGUE = 'COLLEAGUE', _('Colleague')
+    #     RANDOM = 'RANDOM', _('Random')
 
-    involved_one = models.CharField(
-        max_length=50,
-        choices=StressSource.choices,
-        default=StressSource.SELF,
-        null=True,
-        blank=True
-    )
+    # involved_one = models.CharField(
+    #     max_length=50,
+    #     choices=StressSource.choices,
+    #     default=StressSource.SELF,
+    #     null=True,
+    #     blank=True
+    # )
 
     consumption = models.CharField(max_length=50)
     consumption_date = models.DateField(_("Date"), default=datetime.date.today)
@@ -113,5 +113,5 @@ class Vice(models.Model):
     def __str__(self):
         return self.consumption
 
-    # def get_absolute_url(self):
-    #     return reverse('vice_detail', args=[str(self.id)])
+    def get_absolute_url(self):
+        return reverse('vice_detail', args=[str(self.id)])
