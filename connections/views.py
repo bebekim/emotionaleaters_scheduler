@@ -19,7 +19,7 @@ class ConnectionCreateView(LoginRequiredMixin, CreateView):
     model = Connection
     template_name = 'connection_new.html'
     fields = ('emotion', 'reason')
-    login_url = '/login/'
+    login_url = 'account_login'
 #    redirect_field_name = 'redirect_to'
 
     def form_valid(self, form):
@@ -37,7 +37,7 @@ class ConnectionUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Connection
     fields = ['emotion', 'reason']
     template_name = 'connection_edit.html'
-    login_url = 'login'
+    login_url = 'account_login'
 
     def test_func(self):
         obj = self.get_object()
@@ -47,7 +47,7 @@ class ConnectionDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Connection
     template_name = 'connection_delete.html'
     success_url = reverse_lazy('connection')
-    login_url = 'login'
+    login_url = 'account_login'
 
     def test_func(self):
         obj = self.get_object()
