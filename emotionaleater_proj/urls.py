@@ -22,8 +22,6 @@ urlpatterns = [
 
     # user management
     path('accounts/', include('allauth.urls')),
-#    path('post/', include('posts.urls')),
-#    path('motivation/', include('motivations.urls')),
     path('connection/', include('connections.urls')),
     path('', include('pages.urls')),
 ]
