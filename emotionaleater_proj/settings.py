@@ -44,10 +44,10 @@ INSTALLED_APPS = [
     'allauth.account',
     # local
     'users.apps.UsersConfig',
+    'posts.apps.PostsConfig',
     'pages.apps.PagesConfig',
     'connections.apps.ConnectionsConfig',
     'motivations.apps.MotivationsConfig',
-    'vices.apps.VicesConfig',
 ]
 
 MIDDLEWARE = [
