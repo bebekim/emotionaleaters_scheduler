@@ -74,6 +74,7 @@ class Connection(models.Model):
             )
         ),
     ]
+    id = models.AutoField(primary_key=True)
     emotion = models.CharField(
         max_length=50,
         choices=EMOTION_CHOICES,

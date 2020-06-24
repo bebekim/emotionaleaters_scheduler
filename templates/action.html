@@ -1,0 +1,26 @@
+<!-- templates/action.html -->
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}Actions{% endblock title %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    <p>Hi {{ user.email }}</p>
+{% else %}
+    <p>You are not logged in</p>
+{% endif %}
+
+{% for action in all_actions_list reversed %}
+<div class="card">
+    <div class="card-header">
+        <span class="font-weight-bold">{{ action.name }}</span> &middot;
+        <span class="text-muted">by {{ action.author }} | {{ action.created_date }}</span>
+    </div>
+    <div class="card-body">
+        {{ action.description }}
+    </div>
+</div>
+<br />
+{% endfor %}
+{% endblock content %}
