@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
     'connections.apps.ConnectionsConfig',
-    'motivations.apps.MotivationsConfig',
+    'stressors.apps.StressorsConfig',
 ]
 
 MIDDLEWARE = [
