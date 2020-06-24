@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
     'connections.apps.ConnectionsConfig',
-    'stressors.apps.StressorsConfig',
+    # 'stressors.apps.StressorsConfig',
 ]
 
 MIDDLEWARE = [
