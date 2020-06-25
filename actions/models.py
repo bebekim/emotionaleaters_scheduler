@@ -19,4 +19,4 @@ class Action(models.Model):
         return self.emotion
 
     def get_absolute_url(self):
-        return reverse('Action_detail', args=[str(self.id)])
+        return reverse('action_detail', args=[str(self.id)])

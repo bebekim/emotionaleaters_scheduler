@@ -7,6 +7,9 @@
 {% block content %}
 {% if user.is_authenticated %}
     <p>Hi {{ user.email }}</p>
+    <div class="add">
+        <a href="{% url 'action_new' %}">+New action</a>
+    </div>
 {% else %}
     <p>You are not logged in</p>
 {% endif %}
@@ -20,6 +23,12 @@
     <div class="card-body">
         {{ action.description }}
     </div>
+    <div class="card-footer text-center text-muted">
+        <a href="{% url 'action_detail' action.pk %}">View</a> |
+        <a href="{% url 'action_edit' action.pk %}">Edit</a> |
+        <a href="{% url 'action_delete' action.pk %}">Delete</a>
+    </div>
+
 </div>
 <br />
 {% endfor %}

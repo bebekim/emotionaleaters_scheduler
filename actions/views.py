@@ -15,40 +15,40 @@ class ActionListView(LoginRequiredMixin, ListView):
     template_name = 'action.html'
     login_url = 'account_login'
 
-# class ConnectionCreateView(LoginRequiredMixin, CreateView):
-#     model = Connection
-#     template_name = 'connection_new.html'
-#     fields = ('emotion', 'reason')
-#     login_url = 'account_login'
-# #    redirect_field_name = 'redirect_to'
+class ActionCreateView(LoginRequiredMixin, CreateView):
+    model = Action
+    template_name = 'action_new.html'
+    fields = ('name', 'description')
+    login_url = 'account_login'
+    redirect_field_name = 'redirect_to'
 
-#     def form_valid(self, form):
-#         form.instance.author = self.request.user
-#         return super().form_valid(form)
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
 
-# class ConnectionDetailView(LoginRequiredMixin, DetailView):
-#     model = Connection
-#     template_name = 'connection_detail.html'
-#     fields = ['emotion', 'author', 'reason']
-#     login_url = 'account_login'
+class ActionDetailView(LoginRequiredMixin, DetailView):
+    model = Action
+    template_name = 'action_detail.html'
+    fields = ['name', 'author', 'created_date', 'description']
+    login_url = 'account_login'
 
 
-# class ConnectionUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
-#     model = Connection
-#     fields = ['emotion', 'reason']
-#     template_name = 'connection_edit.html'
-#     login_url = 'account_login'
+class ActionUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = Action
+    fields = ['name', 'description']
+    template_name = 'action_edit.html'
+    login_url = 'account_login'
 
-#     def test_func(self):
-#         obj = self.get_object()
-#         return obj.author == self.request.user
+    def test_func(self):
+        obj = self.get_object()
+        return obj.author == self.request.user
 
-# class ConnectionDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
-#     model = Connection
-#     template_name = 'connection_delete.html'
-#     success_url = reverse_lazy('connection')
-#     login_url = 'account_login'
+class ActionDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Action
+    template_name = 'action_delete.html'
+    success_url = reverse_lazy('action')
+    login_url = 'account_login'
 
-#     def test_func(self):
-#         obj = self.get_object()
-#         return obj.author == self.request.user
+    def test_func(self):
+        obj = self.get_object()
+        return obj.author == self.request.user

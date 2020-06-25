@@ -1,0 +1,12 @@
+<!-- templates/action_detail.html -->
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="action-entry">
+    <h2>{{ action.name }}</h2>
+    <p>{{ action.created_date }}</p>
+    <p>{{ action.description }}</p>
+</div>
+
+{% endblock content %}
