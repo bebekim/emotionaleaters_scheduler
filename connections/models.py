@@ -1,3 +1,4 @@
+import uuid
 from django.db import models
 from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
@@ -74,7 +75,11 @@ class Connection(models.Model):
             )
         ),
     ]
-    id = models.AutoField(primary_key=True)
+    id = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False
+        )
     emotion = models.CharField(
         max_length=50,
         choices=EMOTION_CHOICES,
