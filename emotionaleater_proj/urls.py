@@ -24,5 +24,6 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('connection/', include('connections.urls')),
     path('action/', include('actions.urls')),
+    path('conditioning/', include('conditionings.urls')),
     path('', include('pages.urls')),
 ]
