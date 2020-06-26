@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'connections.apps.ConnectionsConfig',
     # 'stressors.apps.StressorsConfig',
     'actions.apps.ActionsConfig',
+    'schedules.apps.SchedulesConfig',
 ]
 
 MIDDLEWARE = [
