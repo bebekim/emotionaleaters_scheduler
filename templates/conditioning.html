@@ -1,0 +1,18 @@
+<!-- templates/connection.html -->
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}Conditioning{% endblock title %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    <p>Hi {{ user.email }}</p>
+{% else %}
+    <p>You are not logged in</p>
+{% endif %}
+
+    <div class="card">
+        <h3>Hello</h3>
+    </div>
+<br />
+{% endblock content %}

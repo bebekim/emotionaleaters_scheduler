@@ -279,6 +279,9 @@ turbolinks + stimulus
 [[https://developers.google.com/calendar/quickstart/python][Google Calendar API - Python]]
 [[https://developers.google.com/calendar/create-events][Google Calendar API - Create Events]]
 ** References
+[[https://twitter.com/daphnekylee/status/1277101831693275136][Revenge Bedtime Procrastination]]
+
+
 *** TODO Conditioning via Profile / Confidence                   :text:based:
 P(A|B) = P(A) P(B|A) / P(B)
 
