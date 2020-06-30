@@ -1,42 +1,41 @@
-<!-- templates/connection.html -->
+<!-- templates/conditioning.html -->
 {% extends '_base.html' %}
 {% load static %}
 
 {% block title %}Conditioning{% endblock title %}
 
 {% block content %}
-{% if user.is_authenticated %}
-    <p>Hi {{ user.email }}</p>
-{% else %}
-    <p>You are not logged in</p>
-{% endif %}
 
-    <div class="row" >
-        <div class="col-lg-4" >
-            <img class="thumbnail"  src="{% static 'images/placeholder.jpg' %}" >
-            <div class="box-element product">
-                <h6><strong>Move</strong></h6>
-                <br>
-                <button class="btn btn-outline" >Add to </button>
-            </div>
-        </div>
+<div class="row">
+    <div class="col-lg-12" >
+        <div class="box-element" >
+            <a class="btn btn-outline-dark"  href="{% url 'act' %}" >&#x2190; Back to Acts</a>
 
-        <div class="col-lg-4" >
-            <img class="thumbnail"  src="{% static 'images/placeholder.jpg' %}" >
-            <div class="box-element product">
-                <h6><strong>Move</strong></h6>
-                <br>
-            </div>
-        </div>
+            <br>
+            <br>
+            <table class="table" >
+                <tr>
+                    <th><h5>Moves: <strong>3</strong></h5></th>
+                    <th><h5>Total Moves: <strong>9</strong></h5></th>
+                    <th>
+                        <a class="btn btn-success"  href="#" >Schedule </a>
+                    </th>
+                </tr>
 
-        <div class="col-lg-4" >
-            <img class="thumbnail"  src="{% static 'images/placeholder.jpg' %}" >
-            <div class="box-element product">
-                <h6><strong>Move</strong></h6>
-                <br>
-            </div>
+            </table>
+
         </div>
+        
+
+
+        <br>
+
+        <div class="box-element" >
+            
+        </div>
+        <br>
 
     </div>
-<br />
+</div>
+
 {% endblock content %}

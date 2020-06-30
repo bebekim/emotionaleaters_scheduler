@@ -6,17 +6,17 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 
-from .models import Conditioning
+from .models import Schedule
 # Create your views here.
 
-class ConditioningListView(LoginRequiredMixin, ListView):
-    model = Conditioning
+class ScheduleListView(LoginRequiredMixin, ListView):
+    model = Schedule
     # context_object_name = 'all_conditionings_list'
-    template_name = 'conditioning.html'
+    template_name = 'schedule.html'
     login_url = 'account_login'
 
-# class ConditioningCreateView(LoginRequiredMixin, CreateView):
-#     model = Conditioning
+# class ScheduleCreateView(LoginRequiredMixin, CreateView):
+#     model = Schedule
 #     template_name = 'connection_new.html'
 #     fields = ('emotion', 'reason')
 #     login_url = 'account_login'
@@ -26,15 +26,15 @@ class ConditioningListView(LoginRequiredMixin, ListView):
 #         form.instance.author = self.request.user
 #         return super().form_valid(form)
 
-# class ConditioningDetailView(LoginRequiredMixin, DetailView):
-#     model = Conditioning
+# class ScheduleDetailView(LoginRequiredMixin, DetailView):
+#     model = Schedule
 #     template_name = 'connection_detail.html'
 #     fields = ['emotion', 'author', 'reason']
 #     login_url = 'account_login'
 
 
-# class ConditioningUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
-#     model = Conditioning
+# class ScheduleUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+#     model = Schedule
 #     fields = ['emotion', 'reason']
 #     template_name = 'connection_edit.html'
 #     login_url = 'account_login'
@@ -43,8 +43,8 @@ class ConditioningListView(LoginRequiredMixin, ListView):
 #         obj = self.get_object()
 #         return obj.author == self.request.user
 
-# class ConditioningDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
-#     model = Conditioning
+# class ScheduleDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+#     model = Schedule
 #     template_name = 'connection_delete.html'
 #     success_url = reverse_lazy('connection')
 #     login_url = 'account_login'

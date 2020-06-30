@@ -1,6 +1,5 @@
 from django.db import models
 
 # Create your models here.
-
-class Conditioning(models.Model):
+class Act(models.Model):
     pass

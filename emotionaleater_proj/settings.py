@@ -46,8 +46,8 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
     'connections.apps.ConnectionsConfig',
-    'actions.apps.ActionsConfig',
-    'conditionings.apps.ConditioningsConfig',
+    'acts.apps.ActsConfig',
+    'schedules.apps.SchedulesConfig',
 ]
 
 MIDDLEWARE = [

@@ -26,17 +26,22 @@ h1,h2,h3,h4,h5,h6{
 	border-radius: 0 0 4px 4px;
 }
 
+.act{
+	border-radius: 0 0 4px 4px;
+}
+
+
 .bg-dark{
 	background-color: #4f868c!important;
 }
 
-#conditioning-icon{
+#schedule-icon{
 	width:25px;
 	display: inline-block;
 	margin-left: 15px;
 }
 
-#conditioning-total{
+#schedule-total{
 	display: block;
 	text-align: center;
 	color:#fff;
@@ -65,7 +70,7 @@ h1,h2,h3,h4,h5,h6{
 	padding: 5px;
 }
 
-.conditioning-row{
+.act-row{
 	display: flex;
     align-items: flex-stretch;
     padding-bottom: 10px;
@@ -91,6 +96,26 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .chg-quantity:hover{
+	opacity: .6;
+}
+
+.repetition{
+	display: inline-block;
+	font-weight: 700;
+	padding-right:10px;
+	
+
+}
+
+.chg-repetition{
+	width: 12px;
+	cursor: pointer;
+	display: block;
+	margin-top: 5px;
+	transition:.1s;
+}
+
+.chg-repetition:hover{
 	opacity: .6;
 }
 

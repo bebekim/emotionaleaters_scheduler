@@ -1,0 +1,50 @@
+<!-- templates/connection.html -->
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}Act{% endblock title %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    <p>Hi {{ user.email }}</p>
+{% else %}
+    <p>You are not logged in</p>
+{% endif %}
+
+    <div class="row" >
+        <div class="col-lg-4" >
+            <img class="thumbnail"  src="{% static 'images/placeholder.jpg' %}" >
+            <div class="box-element act">
+                <h6><strong>Move</strong></h6>
+                <br>
+                <button class="btn btn-outline-secondary add-btn" >Add to Conditioning</button>
+                <a class="btn btn-outline-success" href="#">View</a>
+                <h4 style="display: inline-block; float:right" >x4</h4>
+            </div>
+        </div>
+
+        <div class="col-lg-4" >
+            <img class="thumbnail"  src="{% static 'images/placeholder.jpg' %}" >
+            <div class="box-element act">
+                <h6><strong>Move</strong></h6>
+                <br>
+                <button class="btn btn-outline-secondary add-btn" >Add to Conditioning</button>
+                <a class="btn btn-outline-success" href="#">View</a>
+                <h4 style="display: inline-block; float:right" >x4</h4>
+            </div>
+        </div>
+
+        <div class="col-lg-4" >
+            <img class="thumbnail"  src="{% static 'images/placeholder.jpg' %}" >
+            <div class="box-element act">
+                <h6><strong>Move</strong></h6>
+                <br>
+                <button class="btn btn-outline-secondary add-btn" >Add to Conditioning</button>
+                <a class="btn btn-outline-success" href="#">View</a>
+                <h4 style="display: inline-block; float:right" >x4</h4>
+            </div>
+        </div>
+
+    </div>
+<br />
+{% endblock content %}
