@@ -6,7 +6,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 
-from .models import Schedule
+from .models import Schedule, Act
 # Create your views here.
 
 class ScheduleListView(LoginRequiredMixin, ListView):
@@ -14,6 +14,14 @@ class ScheduleListView(LoginRequiredMixin, ListView):
     # context_object_name = 'all_conditionings_list'
     template_name = 'schedule.html'
     login_url = 'account_login'
+
+
+class ActListView(LoginRequiredMixin, ListView):
+    model = Act
+    # context_object_name = 'all_conditionings_list'
+    template_name = 'act.html'
+    login_url = 'account_login'
+
 
 # class ScheduleCreateView(LoginRequiredMixin, CreateView):
 #     model = Schedule

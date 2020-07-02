@@ -47,7 +47,6 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
     'connections.apps.ConnectionsConfig',
-    'acts.apps.ActsConfig',
     'schedules.apps.SchedulesConfig',
 ]
 
@@ -90,7 +89,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'emotionaleating_db',
         'USER': 'emotionaleater',
-        'PASSWORD': 'May5L0v3',
+        'PASSWORD': '$NwqE74jr*&y',
         'HOST': 'localhost',
         'PORT': '',
     }

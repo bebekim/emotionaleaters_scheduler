@@ -23,7 +23,6 @@ urlpatterns = [
     # user management
     path('accounts/', include('allauth.urls')),
     path('connection/', include('connections.urls')),
-    path('schedules/', include('schedules.urls')),
-    path('act/', include('acts.urls')),
+    path('schedule/', include('schedules.urls')),
     path('', include('pages.urls')),
 ]
