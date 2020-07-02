@@ -12,6 +12,7 @@ django-allauth==0.42.0
 django-bootstrap4==2.1.1
 django-crispy-forms==1.9.1
 django-smart-selects==1.5.6
+django-taggit==1.3.0
 django-timezone-field==4.0
 elpy==1.999
 idna==2.9

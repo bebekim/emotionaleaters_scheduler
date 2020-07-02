@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'allauth',
     'allauth.account',
+    'taggit',
     # local
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
@@ -161,4 +162,6 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',
 )
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+TAGGIT_CASE_INSENSITIVE = True
 
