@@ -66,7 +66,6 @@ them microtasks and make them do it.
      gratification as soon as they possibly could; we completely
      sucked at all of that. 
 
-
 **** Onboarding
   - ask: have you gained weight since marriage/birth of first child?
   - ask: Would you like to be better conditioned?
@@ -83,7 +82,6 @@ them microtasks and make them do it.
   - ask: do you feel you have eating habits deterimental to your
     health such as emotional eating?
     - select as many as you can
-
 
 **** Insert events to your calendar
 These events should be intervals of 6 minutes or less, given that
@@ -119,6 +117,9 @@ event push such as [[https://github.com/jazzband/django-push-notifications][djan
 **** visualisation
  visualisation is the starting point of discussion for sponsor/counsellor to intervene
  [[https://www.youtube.com/watch?v=YlOVR_1q4Ak][Data Viz with Bokeh and Django]]
+**** Mathematical solution
+[[https://ocw.mit.edu/courses/engineering-systems-division/esd-36-system-project-management-fall-2012/lecture-notes/MITESD_36F12_Lec09.pdf][Program Evaluation and Review Technique (PERT)]]
+
 *** Content
 Let's register events
 

@@ -15,13 +15,6 @@ class ActListView(LoginRequiredMixin, ListView):
     template_name = 'act.html'
     login_url = 'account_login'
 
-
-class MoveListView(LoginRequiredMixin, ListView):
-    model = Move
-    template_name = "move.html"
-    
-
-
 # class ActCreateView(LoginRequiredMixin, CreateView):
 #     model = Act
 #     template_name = 'connection_new.html'
