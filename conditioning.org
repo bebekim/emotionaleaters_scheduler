@@ -276,6 +276,26 @@ turbolinks + stimulus
 ** References
 [[https://twitter.com/daphnekylee/status/1277101831693275136][Revenge Bedtime Procrastination]]
 
+*** Actions
+**** Posture
+[[https://www.nhs.uk/live-well/exercise/common-posture-mistakes-and-fixes/][Posture Mistakes]]
+
+[[https://www.bodybuilding.com/content/posture-power-how-to-correct-your-body-alignment.html][Bodybuilding.com - How to Correct Body Alignment]]
+
+As long as she maintains a good workout regiment and focuses on her
+posture, and body mechanics during and after the workouts, she will be
+just fine. The problems arise when a person stops moving and paying
+. 
+
+One thing lacking in this article is a description on how to engage
+muscles that control posture while feeling them work. This is a
+concept known as proprioception or neuromuscular re-education. This
+can be gained by learning where the muscles are located, how to
+(isometrically) contract them, and what it feels like when they are
+contracted. Then you practice until it's easy to do. This, in
+conjunction with everything this author has mentioned, is a good way
+to finally gain posture control.
+
 
 *** TODO Conditioning via Profile / Confidence                   :text:based:
 P(A|B) = P(A) P(B|A) / P(B)

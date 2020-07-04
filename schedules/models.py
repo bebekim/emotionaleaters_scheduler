@@ -1,14 +1,16 @@
 import uuid
 from django.db import models
 from django.utils import timezone
+from django.utils.translation import gettext_lazy as _
 from django.urls import reverse
 from django.contrib.auth import get_user_model
 from taggit.managers import TaggableManager
 
+
 # Create your models here.
 class ActionCategory(models.Model):
     name = models.CharField(max_length=50, null=True)
-    tags = TaggableManager()
+    tags = TaggableManager(help_text="tag at your convenience", blank=True)
     
     def __str__(self):
         return self.name
@@ -17,11 +19,22 @@ class ActionCategory(models.Model):
         pass
 
 
-
 class Act(models.Model):
+
+    class Confidence(models.IntegerChoices):
+        UP = 1
+        NEUTRAL = 0
+        DOWN = -1
+
     name = models.CharField(max_length=200, null=True)
     category = models.ForeignKey(ActionCategory, on_delete=models.CASCADE, blank=True)
-    tags = TaggableManager()
+    tags = TaggableManager(help_text="tag at your convenience", blank=True)
+    # make this enum: build confident - up/0/down
+    builds_confidence = models.IntegerField(choices=Confidence.choices)
+    image = models.ImageField(null=True, blank=True)
+    # reviewed_at: 
+    # next_review_at: 
+    # request_review_count
 
     def __str__(self):
         return self.name
