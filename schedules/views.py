@@ -15,6 +15,13 @@ class SchedulerView(LoginRequiredMixin, ListView):
     template_name = 'scheduler.html'
     login_url = 'account_login'
 
+# class UserSchedulerView(LoginRequiredMixin, ListView):
+#     model = Schedule
+#     context_object_name = 'user_scheduler'
+#     login_url = 'account_login'
+
+#     def get_queryset(self):
+#         return Schedule.objects.filter(user=self.request.user)
 
 class ActListView(LoginRequiredMixin, ListView):
     model = Act
