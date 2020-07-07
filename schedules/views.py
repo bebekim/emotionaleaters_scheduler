@@ -25,26 +25,27 @@ class SchedulerView(LoginRequiredMixin, ListView):
 
 class ActListView(LoginRequiredMixin, ListView):
     model = Act
-    context_object_name = 'all_acts_list'
+    context_object_name = 'user_acts_list'
+#    context_object_name = 'all_acts_list'
     template_name = 'act.html'
     login_url = 'account_login'
 
-# class ActCreateView(LoginRequiredMixin, CreateView):
-#     model = Act
-#     template_name = 'act_new.html'
-#     fields = ['emotion', 'reason']
-#     login_url = 'account_login'
-# #    redirect_field_name = 'redirect_to'
+class ActCreateView(LoginRequiredMixin, CreateView):
+    model = Act
+    template_name = 'act_new.html'
+    fields = ['title', 'category', 'description', 'tags', 'builds_confidence', 'image']
+    login_url = 'account_login'
+#    redirect_field_name = 'redirect_to'
 
-#     def form_valid(self, form):
-#         form.instance.author = self.request.user
-#         return super().form_valid(form)
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
 
-# class ActDetailView(LoginRequiredMixin, DetailView):
-#     model = Act
-#     template_name = 'act_detail.html'
-#     fields = ['emotion', 'author', 'reason']
-#     login_url = 'account_login'
+class ActDetailView(LoginRequiredMixin, DetailView):
+    model = Act
+    template_name = 'act_detail.html'
+    fields = ['title', 'category', 'description', 'tags', 'builds_confidence']
+    login_url = 'account_login'
 
 
 # class ActUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):

@@ -1,0 +1,13 @@
+<!-- templates/act_detail.html -->
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="act-entry">
+    <h2>{{ act.title }}</h2>
+    <h4>{{ act.category }}</h4>
+    <p>{{ act.description }}</p>
+</div>
+
+{% endblock content %}
+

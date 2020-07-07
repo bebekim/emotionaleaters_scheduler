@@ -16,11 +16,11 @@
 {% endif %}
 
 <div class="row" >
-    {% for act in all_acts_list %}
+    {% for act in user_acts_list %}
     <div class="col-lg-4" >
         <img class="thumbnail"  src="{{ act.imageURL }}" >
         <div class="box-element act">
-            <h6><strong>{{ act.name }}</strong></h6>
+            <h6><strong>{{ act.title }}</strong></h6>
             <br>
             <button class="btn btn-outline-secondary add-btn" >Add to Conditioning</button>
             <a class="btn btn-outline-success" href="#">View</a>

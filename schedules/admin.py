@@ -3,7 +3,7 @@ from .models import *
 
 class ActAdmin(admin.ModelAdmin):
     model = Act
-    list_display = ('name', 'category', 'builds_confidence', 'image')
+    list_display = ('id', 'title', 'category', 'builds_confidence', 'image')
 
 
 class ScheduleAdmin(admin.ModelAdmin):

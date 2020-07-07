@@ -7,8 +7,8 @@ from .views import (
     # ScheduleUpdateView,
     # ScheduleDeleteView,
     ActListView, 
-    # ActDetailView, 
-    # ActCreateView, 
+    ActDetailView, 
+    ActCreateView, 
     # ActUpdateView,
     # ActDeleteView
     
@@ -17,8 +17,8 @@ from .views import (
 urlpatterns = [
     # path('<uuid:pk>/delete', ActDeleteView.as_view(), name='connection_delete'),
     # path('<uuid:pk>/edit', ActUpdateView.as_view(), name='connection_edit'),
-    # path('new/', ActCreateView.as_view(), name='connection_new'),
-    # path('<uuid:pk>/', ActDetailView.as_view(), name='connection_detail'),
+    path('act/new/', ActCreateView.as_view(), name='act_new'),
+    path('act/<uuid:pk>/', ActDetailView.as_view(), name='act_detail'),
     path('act/', ActListView.as_view(), name='act'),
 
     # path('scheduler/<uuid:pk>/delete', ScheduleDeleteView.as_view(), name='connection_delete'),

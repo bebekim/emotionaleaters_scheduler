@@ -5,12 +5,18 @@ from django.utils.translation import gettext_lazy as _
 from django.urls import reverse
 from django.contrib.auth import get_user_model
 from taggit.managers import TaggableManager
-
+from django.template.defaultfilters import slugify
 
 # Create your models here.
 class ActionCategory(models.Model):
     name = models.CharField(max_length=50, null=True)
     tags = TaggableManager(help_text="tag at your convenience", blank=True)
+
+
+    class Meta:
+        ordering = ('name',)
+        verbose_name = 'category'
+        verbose_name_plural = 'categories'
     
     def __str__(self):
         return self.name
@@ -20,27 +26,38 @@ class ActionCategory(models.Model):
 
 
 class Act(models.Model):
-
     class Confidence(models.IntegerChoices):
         UP = 1
         NEUTRAL = 0
         DOWN = -1
 
-    name = models.CharField(max_length=200, null=True)
+    id = models.UUIDField(
+        primary_key=True,
+        default=uuid.uuid4,
+        editable=False
+    )
+    title = models.CharField(max_length=200, null=True)
     category = models.ForeignKey(ActionCategory, on_delete=models.CASCADE, blank=True)
+    # https://learndjango.com/tutorials/django-slug-tutorial
+    slug = models.SlugField(max_length=200, null=False, unique=True, db_index=True)
+    description = models.TextField(blank=True)
     tags = TaggableManager(help_text="tag at your convenience", blank=True)
-    # make this enum: build confident - up/0/down
     builds_confidence = models.IntegerField(choices=Confidence.choices)
     image = models.ImageField(null=True, blank=True)
     # reviewed_at: 
     # next_review_at: 
     # request_review_count
 
+
+    class Meta:
+        ordering = ('title',)
+        index_together = (('id', 'slug'),)
+
     def __str__(self):
-        return self.name
+        return self.title
 
     def get_absolute_url(self):
-        pass
+        return reverse('act_detail', args=[str(self.id)])
 
     @property
     def imageURL(self):
@@ -49,7 +66,14 @@ class Act(models.Model):
         except:
             url = ''
         return url
-            
+
+    def save(self, *args, **kwargs): # new
+        if not self.slug:
+            self.slug = slugify(self.title)
+        return super().save(*args, **kwargs)
+
+
+
 
 class Schedule(models.Model):
     id = models.UUIDField(
