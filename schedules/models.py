@@ -43,7 +43,7 @@ class Act(models.Model):
     description = models.TextField(blank=True)
     tags = TaggableManager(help_text="tag at your convenience", blank=True)
     builds_confidence = models.IntegerField(choices=Confidence.choices)
-    image = models.ImageField(null=True, blank=True)
+    image = models.ImageField(null=True, blank=True, upload_to='images')
     # reviewed_at: 
     # next_review_at: 
     # request_review_count

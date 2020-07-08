@@ -1,0 +1,12 @@
+<!-- templates/action_edit.html -->
+{% extends '_base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <h1>Edit Act</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input type="submit" value="Update" />
+    </form>
+{% endblock content %}
