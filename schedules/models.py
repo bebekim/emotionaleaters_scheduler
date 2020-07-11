@@ -39,7 +39,8 @@ class Act(models.Model):
     title = models.CharField(max_length=200, null=True)
     category = models.ForeignKey(ActionCategory, on_delete=models.CASCADE, blank=True)
     # https://learndjango.com/tutorials/django-slug-tutorial
-    slug = models.SlugField(max_length=200, null=False, unique=True, db_index=True)
+    # Make the title and the slug use the same max_length or make the slug field use a lesser max_length
+    slug = models.SlugField(default='', editable=False, max_length=150, null=False, unique=True, db_index=True)
     description = models.TextField(blank=True)
     tags = TaggableManager(help_text="tag at your convenience", blank=True)
     builds_confidence = models.IntegerField(choices=Confidence.choices)
@@ -57,7 +58,12 @@ class Act(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('act_detail', args=[str(self.id)])
+        kwargs = {
+            'pk': self.id,
+            'slug': self.slug
+        }
+
+        return reverse('act_detail', kwargs=kwargs)
 
     @property
     def imageURL(self):
@@ -68,8 +74,8 @@ class Act(models.Model):
         return url
 
     def save(self, *args, **kwargs): # new
-        if not self.slug:
-            self.slug = slugify(self.title)
+        value = self.title
+        self.slug = slugify(value)
         return super().save(*args, **kwargs)
 
 
