@@ -23,7 +23,7 @@
             <h6><strong>{{ act.title }}</strong></h6>
             <br>
             <button class="btn btn-outline-secondary add-btn" >Add to Conditioning</button>
-            <a class="btn btn-outline-success" href="#">View</a>
+            <a class="btn btn-outline-success" href="{% url 'act_detail' act.slug %}">View</a>
         </div>
     </div>
     {% endfor %}

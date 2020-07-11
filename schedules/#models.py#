@@ -74,9 +74,11 @@ class Act(models.Model):
         return url
 
     def save(self, *args, **kwargs): # new
-        value = self.title
-        self.slug = slugify(value)
-        super().save(*args, **kwargs)
+        if not self.slug:
+            value = self.title
+            self.slug = slugify(value)
+        return super().save(*args, **kwargs)
+
 
 
 

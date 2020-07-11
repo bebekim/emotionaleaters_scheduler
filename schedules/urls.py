@@ -18,7 +18,7 @@ urlpatterns = [
     # path('<uuid:pk>/delete', ActDeleteView.as_view(), name='connection_delete'),
     # path('<uuid:pk>/edit', ActUpdateView.as_view(), name='connection_edit'),
     path('act/new/', ActCreateView.as_view(), name='act_new'),
-    path('act/<str:slug>-<uuid:pk>/', ActDetailView.as_view(), name='act_detail'),
+    path('act/<str:slug>/', ActDetailView.as_view(), name='act_detail'),
     path('act/', ActListView.as_view(), name='act'),
 
     # path('scheduler/<uuid:pk>/delete', ScheduleDeleteView.as_view(), name='connection_delete'),
