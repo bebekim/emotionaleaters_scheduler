@@ -24,7 +24,7 @@ MarkupSafe==1.1.1
 O365==2.0.10
 oauthlib==3.1.0
 parso==0.7.0
-Pillow==7.2.0
+Pillow==8.2.0
 poyo==0.5.0
 psycopg2-binary==2.8.5
 python-dateutil==2.8.1
